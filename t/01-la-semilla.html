@@ -24,7 +24,15 @@ blockquote{border-left:3px solid var(--acc);margin:12px 0;padding:6px 16px;backg
 <body><nav class="top"><a class="brand" href="../index.html">El cerebro de tu empresa</a><a class="on" href="../t/01-la-semilla.html">Empieza aquí</a><a href="../t/04-conectar-higgsfield.html">Vídeo y anuncios</a><a href="../t/09-anatomia-de-una-nota.html">El sistema</a><a href="../t/14-datos-sensibles-y-ria.html">Seguridad y ley</a><a href="../t/15-publicar-pagina-qr.html">Publicar</a><a href="../t/16-la-guia-completa.html">Referencia</a><a href="../index.html#descargas">Descargas</a></nav><div class="wrap"><p class="mu">Empieza aquí · 30 min</p><h1>La semilla: de seis líneas a un cerebro</h1><p class="lead">El primer paso, el del lunes. Seis líneas sobre tu negocio, un prompt, cuatro documentos y una pregunta real.</p><h2>Qué vas a tener al terminar</h2>
 <p>Una carpeta <code>00_CEREBRO</code> con cuatro archivos de texto que cualquier IA puede leer antes de trabajar para ti: quién eres, qué vendes, para quién y qué no se puede decir. Y la prueba de que funciona.</p>
 <h2>Paso 1. Escribe la semilla (10 min)</h2>
-<p>Seis líneas, como se lo contarías a alguien en un bar. Sin adornos.</p>
+<p>Seis líneas, como se lo contarías a alguien en un bar. Sin adornos. Copia la plantilla y rellena los corchetes:</p>
+<pre><code>[Nombre de la empresa]. [Qué somos: tienda, taller, consultora, restaurante] en [dónde] con [tienda online / solo local / servicio a domicilio]. [Cuántas personas], [desde cuándo].
+Vendemos [qué: productos o servicios concretos], de [precio mínimo] a [precio máximo].
+Clientes: [tipo 1], [tipo 2], [tipo 3] (quiénes son y qué buscan, en su lenguaje).
+Nos diferencia: [una o dos cosas concretas y comprobables].
+No queremos sonar a [lo que no sois].
+Canales: [tienda, web, Instagram, WhatsApp, TikTok...].
+</code></pre>
+<p>Así queda rellena con la tienda de ejemplo de la charla:</p>
 <blockquote>
 <p>Suela Norte. Tienda de zapatillas en el centro de Oviedo con tienda online a toda España. Dos socios, seis años. Vendemos Nike, Adidas, New Balance, Asics, Salomon y Vans, de 85 a 190 euros. Clientes: chavales que ven la zapa en TikTok, gente de 30 que quiere ir cómodo, runners y gente que regala. Nos diferencia: te decimos si te queda mal, cambio en 30 días sin preguntas, stock real. No queremos sonar a tienda de reventa ni a centro comercial. Canales: tienda, web, Instagram y TikTok.</p>
 </blockquote>
@@ -43,6 +51,93 @@ Reglas: usa SOLO la información de la descripción. Donde falte un dato importa
 
 Descripción del negocio:
 </code></pre>
+<h2>Así queda el resultado con Suela Norte</h2>
+<p>Lo que devuelve el prompt con la semilla de arriba, tal cual va en el cerebro de ejemplo. Fíjate en lo corto que es cada uno.</p>
+<h3>01_QUIEN.md</h3>
+<p><strong>Quienes somos.</strong> Tienda de zapatillas en el centro de Oviedo (calle Uria) con tienda online a toda Espana. Dos socios, seis anos abiertos. Vendemos lo que nos pondriamos nosotros.</p>
+<p><strong>Como hablamos.</strong> De tu a tu, como en la tienda. Frases cortas. Sabemos de zapatillas y se nota, pero sin dar la chapa. Usamos "zapa", "par", "talla justa", "de diario". Jamas usamos "sneakerhead", "drop exclusivo", "must have" ni emojis de fuego.</p>
+<p><strong>Lo que nos diferencia.</strong> Te decimos si te queda mal. Cambio sin preguntas en 30 dias. Stock real: si esta en la web, esta en la tienda.</p>
+<h3>02_QUE.md</h3>
+<table>
+<thead>
+<tr>
+<th>Producto</th>
+<th>Marca</th>
+<th>PVP</th>
+<th>Estado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Nike Air Max Tuned 1</td>
+<td>Nike</td>
+<td>130 €</td>
+<td>estrella</td>
+</tr>
+<tr>
+<td>Nike Air Force 1 '07</td>
+<td>Nike</td>
+<td>120 €</td>
+<td>basico</td>
+</tr>
+<tr>
+<td>New Balance 530</td>
+<td>New Balance</td>
+<td>110 €</td>
+<td>basico</td>
+</tr>
+<tr>
+<td>Adidas Samba OG</td>
+<td>Adidas</td>
+<td>120 €</td>
+<td>saturado</td>
+</tr>
+<tr>
+<td>Asics Gel-Kayano 14</td>
+<td>Asics</td>
+<td>160 €</td>
+<td>subiendo</td>
+</tr>
+<tr>
+<td>Salomon XT-6</td>
+<td>Salomon</td>
+<td>190 €</td>
+<td>subiendo</td>
+</tr>
+<tr>
+<td>Vans Old Skool</td>
+<td>Vans</td>
+<td>85 €</td>
+<td>lento</td>
+</tr>
+<tr>
+<td>Nike Dunk Low Panda</td>
+<td>Nike</td>
+<td>120 €</td>
+<td>muerto</td>
+</tr>
+</tbody>
+</table>
+<p>Servicios: cambio 30 dias, envio 48h peninsula (gratis desde 90 €), reserva de talla por WhatsApp, tarjeta regalo.
+Que no vendemos: ropa, replicas, reventa de ediciones limitadas.</p>
+<h3>03_PARA_QUIEN.md</h3>
+<p>Cuatro tipos de persona entran por la puerta (o por la web):
+- Chaval que ficha por TikTok (16-24): Ve la zapa en un video y la quiere ya. Precio sensible. Compra online, devuelve si no es exacta. Pregunta por tallas y por si es original.
+- Treintanero comodo (28-40): Quiere una zapa para todo el dia que no parezca de padre. Compra en tienda, prueba dos tallas, paga sin mirar mucho. Vuelve si le tratan bien.
+- Runner de asfalto (25-45): Entra por tecnico y acaba comprando lifestyle. Pregunta por drop y amortiguacion. Lee reviews.
+- El que regala (35-60): Padres y parejas. No sabe de modelos, sabe el presupuesto. Necesita que le digan cual, y cambio facil.</p>
+<p>Lo que les importa a todos: que la talla sea la que dice, que llegue rapido, y que si no les queda bien se pueda cambiar sin drama.
+Dudas antes de comprar: "¿es original?", "¿talla grande o pequeno?", "¿lo tienes en tienda para probar?".</p>
+<h3>04_REGLAS.md</h3>
+<p><strong>Nunca:</strong>
+- Decir "ultimas unidades" si hay mas de 5 pares.
+- Inventar descuentos: los precios salen de 02_QUE, siempre.
+- Prometer envio en 24h (es 48h).
+- Usar fotos que no sean del producto real que vendemos.
+- Anuncios generados con IA sin la etiqueta "contenido generado con IA" (AI Act, desde 2 ago 2026).</p>
+<p><strong>Siempre exactos:</strong> precios, plazos, tallas disponibles, politica de cambio (30 dias).</p>
+<p><strong>Datos que no estan aqui:</strong> [PREGUNTAR AL DUENO] antes de inventarlos.</p>
+<p>Los <code>[PREGUNTAR AL DUEÑO]</code> son la parte importante: lo que la semilla no decía, el modelo lo pregunta en vez de inventarlo.</p>
 <h2>Paso 3. Contesta lo que te pregunta (5 min)</h2>
 <p>Fíjate en los <code>[PREGUNTAR AL DUEÑO]</code>. No se lo ha inventado: te lo pregunta. Contesta y pídele que actualice los documentos. Eso es un empleado bien dirigido.</p>
 <h2>Paso 4. Guárdalos (2 min)</h2>
