@@ -1,0 +1,71 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Publicar una página con QR desde Claude · El cerebro de tu empresa · edrian.exe</title><meta name="description" content="Lo que viste en directo: una carpeta con la web, un script de diez segundos y GitHub Pages. Gratis y sin depender de nadie."><style>:root{--bg:#0b0b0f;--tx:#f2f5fa;--mu:#8a8a94;--acc:#ff8c00;--card:#15151b;--b:#2a2a33}
+html{background:var(--bg)}body{margin:0;background:var(--bg);color:var(--tx);font:17px/1.65 -apple-system,"Segoe UI",Inter,Arial,sans-serif}
+a{color:var(--acc)}.wrap{max-width:860px;margin:0 auto;padding:24px 20px 80px}
+nav.top{display:flex;gap:14px;flex-wrap:wrap;align-items:center;padding:14px 20px;border-bottom:1px solid var(--b);position:sticky;top:0;background:rgba(11,11,15,.96);z-index:9}
+nav.top a{color:var(--tx);text-decoration:none;font-size:14px;padding:6px 10px;border-radius:8px}nav.top a:hover,nav.top a.on{background:var(--card);color:var(--acc)}
+nav.top .brand{font-weight:600;color:var(--acc)}
+h1{font-size:36px;line-height:1.12;margin:10px 0 8px}h2{font-size:24px;margin:40px 0 12px;color:var(--acc)}h3{font-size:19px;margin:26px 0 8px}
+p,li{color:#d9dbe3}strong{color:var(--tx)}hr{border:0;border-top:1px solid var(--b);margin:40px 0}
+table{border-collapse:collapse;width:100%;font-size:15px;margin:12px 0}th,td{border:1px solid var(--b);padding:8px 10px;text-align:left;vertical-align:top}th{color:var(--mu);font-weight:500}
+code{background:var(--card);padding:2px 6px;border-radius:6px;font-size:14px}pre{background:var(--card);padding:14px;border-radius:12px;overflow:auto;font-size:14px;line-height:1.5}pre code{padding:0;background:none}
+blockquote{border-left:3px solid var(--acc);margin:12px 0;padding:6px 16px;background:var(--card);border-radius:0 12px 12px 0}
+.hero{padding:30px 0 10px}.hero p.lead{font-size:20px;color:#d9dbe3;max-width:700px}
+.btns{display:flex;gap:12px;flex-wrap:wrap;margin:18px 0 6px}
+.btn{display:inline-block;background:var(--acc);color:#1a0d00;text-decoration:none;font-weight:600;padding:14px 18px;border-radius:12px;font-size:16px}
+.btn.sec{background:var(--card);color:var(--tx);border:1px solid var(--b)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px;margin:14px 0 8px}
+.card{display:block;background:var(--card);border:1px solid var(--b);border-radius:14px;padding:16px;text-decoration:none;color:var(--tx)}
+.card:hover{border-color:var(--acc)}.card .k{font-size:12px;color:var(--acc);letter-spacing:.04em;text-transform:uppercase}.card h3{margin:6px 0 6px;font-size:18px}.card p{margin:0;font-size:14px;color:var(--mu)}
+.card .t{font-size:12px;color:var(--mu);margin-top:8px}
+.mu{color:var(--mu);font-size:14px}.pager{display:flex;justify-content:space-between;gap:12px;margin-top:40px;font-size:15px}
+.step{background:var(--card);border:1px solid var(--b);border-radius:12px;padding:12px 16px;margin:10px 0}
+@media(max-width:600px){h1{font-size:28px}}</style></head>
+<body><nav class="top"><a class="brand" href="../index.html">El cerebro de tu empresa</a><a href="../t/01-la-semilla.html">Empieza aquí</a><a href="../t/04-conectar-higgsfield.html">Vídeo y anuncios</a><a href="../t/09-anatomia-de-una-nota.html">El sistema</a><a href="../t/14-datos-sensibles-y-ria.html">Seguridad y ley</a><a class="on" href="../t/15-publicar-pagina-qr.html">Publicar</a><a href="../t/16-la-guia-completa.html">Referencia</a><a href="../index.html#descargas">Descargas</a></nav><div class="wrap"><p class="mu">Publicar · 30 min</p><h1>Publicar una página con QR desde Claude</h1><p class="lead">Lo que viste en directo: una carpeta con la web, un script de diez segundos y GitHub Pages. Gratis y sin depender de nadie.</p><h2>Qué hace</h2>
+<p>Sube una carpeta con archivos HTML (y zips, PDFs) a un repositorio público de GitHub y activa GitHub Pages. La dirección queda <code>https://TU-USUARIO.github.io/NOMBRE/</code>. Es donde vive esta web.</p>
+<h2>Lo que necesitas</h2>
+<ul>
+<li>Cuenta de GitHub (gratis) y <code>git</code> instalado con tu sesión iniciada (así el script coge el token solo, sin pegar claves).</li>
+<li>Python 3.</li>
+</ul>
+<h2>Paso 1. La carpeta de la web</h2>
+<p>Una carpeta <code>out</code> con <code>index.html</code> y lo que quieras servir. Si le pides a Claude "hazme una página con esta guía y un botón de descarga", te la escribe. Pídele fondo oscuro, letra grande y que funcione en el móvil.</p>
+<h2>Paso 2. El script</h2>
+<p>Guarda esto como <code>publicar.py</code> junto a la carpeta <code>out</code> y cambia <code>REPO</code>:</p>
+<pre><code class="language-python">import subprocess, json, base64, urllib.request, os, hashlib
+REPO = &quot;nombre-de-tu-web&quot;; OUT = &quot;out&quot;
+cred = subprocess.run([&quot;git&quot;,&quot;credential&quot;,&quot;fill&quot;], input=&quot;protocol=https\nhost=github.com\n\n&quot;, capture_output=True, text=True).stdout
+tok = dict(l.split(&quot;=&quot;,1) for l in cred.strip().splitlines() if &quot;=&quot; in l)[&quot;password&quot;]
+H = {&quot;Authorization&quot;:&quot;Bearer &quot;+tok, &quot;Accept&quot;:&quot;application/vnd.github+json&quot;, &quot;User-Agent&quot;:&quot;deploy&quot;}
+def api(m, p, d=None):
+    r = urllib.request.Request(&quot;https://api.github.com&quot;+p, method=m, headers=H, data=json.dumps(d).encode() if d is not None else None)
+    try:
+        with urllib.request.urlopen(r) as x: return x.status, json.loads(x.read() or b&quot;{}&quot;)
+    except urllib.error.HTTPError as e: return e.code, json.loads(e.read() or b&quot;{}&quot;)
+user = api(&quot;GET&quot;,&quot;/user&quot;)[1][&quot;login&quot;]
+api(&quot;POST&quot;,&quot;/user/repos&quot;,{&quot;name&quot;:REPO,&quot;private&quot;:False,&quot;auto_init&quot;:False})
+st, tree = api(&quot;GET&quot;,f&quot;/repos/{user}/{REPO}/git/trees/main?recursive=1&quot;)
+remote = {t[&quot;path&quot;]:t[&quot;sha&quot;] for t in tree.get(&quot;tree&quot;,[]) if t[&quot;type&quot;]==&quot;blob&quot;} if st==200 else {}
+for r,_,fs in os.walk(OUT):
+    for f in fs:
+        rel = os.path.relpath(os.path.join(r,f),OUT).replace(os.sep,&quot;/&quot;); data = open(os.path.join(r,f),&quot;rb&quot;).read()
+        if remote.get(rel) == hashlib.sha1(b&quot;blob %d\0&quot; % len(data) + data).hexdigest(): continue
+        body = {&quot;message&quot;:rel,&quot;content&quot;:base64.b64encode(data).decode(),&quot;branch&quot;:&quot;main&quot;}
+        if rel in remote: body[&quot;sha&quot;] = remote[rel]
+        print(rel, api(&quot;PUT&quot;,f&quot;/repos/{user}/{REPO}/contents/{rel}&quot;,body)[0])
+if api(&quot;GET&quot;,f&quot;/repos/{user}/{REPO}/contents/.nojekyll&quot;)[0] != 200: api(&quot;PUT&quot;,f&quot;/repos/{user}/{REPO}/contents/.nojekyll&quot;,{&quot;message&quot;:&quot;pages&quot;,&quot;content&quot;:&quot;&quot;,&quot;branch&quot;:&quot;main&quot;})
+st, r = api(&quot;POST&quot;,f&quot;/repos/{user}/{REPO}/pages&quot;,{&quot;source&quot;:{&quot;branch&quot;:&quot;main&quot;,&quot;path&quot;:&quot;/&quot;}})
+print(&quot;URL:&quot;, f&quot;https://{user}.github.io/{REPO}/&quot;)
+</code></pre>
+<h2>Paso 3. Publicar</h2>
+<p><code>python publicar.py</code>. La primera vez GitHub Pages tarda entre uno y diez minutos en servir la página; las siguientes, uno o dos. Por eso en la charla la portada se publicó el día antes y en directo solo se subió el contenido.</p>
+<h2>Paso 4. El QR</h2>
+<p>Con Python: <code>pip install qrcode[pil]</code> y</p>
+<pre><code class="language-python">import qrcode; qrcode.make(&quot;https://TU-USUARIO.github.io/NOMBRE/&quot;).save(&quot;qr.png&quot;)
+</code></pre>
+<p>O pídeselo a Claude: "genera el QR de esta URL en PNG, fondo negro, módulos blancos".</p>
+<h2>Para que lo haga Claude sin preguntar</h2>
+<p>En el <code>CLAUDE.md</code> de la carpeta: <code>Cuando diga "publica la web", ejecuta python publicar.py y responde con una línea: la URL y "publicado".</code></p>
+<h2>Por qué GitHub Pages y no otro</h2>
+<p>Es gratis, no caduca, y no depende de un proveedor que un día bloquee tu dominio. Si usas un dominio propio, apúntalo con DNS al repositorio.</p><div class="pager"><a href="14-datos-sensibles-y-ria.html">← Datos sensibles, anonimización y RIA</a><a href="16-la-guia-completa.html">La guía completa: el cerebro de tu empresa →</a></div>
+<hr><p class="mu">Semana de la IA 2026 · Cluster TIC Asturias · 25 de septiembre · Adrián Nicieza, edrian.exe · contacto@edrianexe.com · @edrian.exe<br>Contenido generado con ayuda de IA y revisado por un humano. Datos de la tienda de ejemplo, simulados.</p></div></body></html>
