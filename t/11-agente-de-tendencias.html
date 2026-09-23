@@ -1,0 +1,42 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>El agente de tendencias mensual · El cerebro de tu empresa · edrian.exe</title><meta name="description" content="Un prompt que rellena el radar cada mes con estado y fuente. Se adapta a competencia, normativa o precios cambiando un párrafo."><style>:root{--bg:#0b0b0f;--tx:#f2f5fa;--mu:#8a8a94;--acc:#ff8c00;--card:#15151b;--b:#2a2a33}
+html{background:var(--bg)}body{margin:0;background:var(--bg);color:var(--tx);font:17px/1.65 -apple-system,"Segoe UI",Inter,Arial,sans-serif}
+a{color:var(--acc)}.wrap{max-width:860px;margin:0 auto;padding:24px 20px 80px}
+nav.top{display:flex;gap:14px;flex-wrap:wrap;align-items:center;padding:14px 20px;border-bottom:1px solid var(--b);position:sticky;top:0;background:rgba(11,11,15,.96);z-index:9}
+nav.top a{color:var(--tx);text-decoration:none;font-size:14px;padding:6px 10px;border-radius:8px}nav.top a:hover,nav.top a.on{background:var(--card);color:var(--acc)}
+nav.top .brand{font-weight:600;color:var(--acc)}
+h1{font-size:36px;line-height:1.12;margin:10px 0 8px}h2{font-size:24px;margin:40px 0 12px;color:var(--acc)}h3{font-size:19px;margin:26px 0 8px}
+p,li{color:#d9dbe3}strong{color:var(--tx)}hr{border:0;border-top:1px solid var(--b);margin:40px 0}
+table{border-collapse:collapse;width:100%;font-size:15px;margin:12px 0}th,td{border:1px solid var(--b);padding:8px 10px;text-align:left;vertical-align:top}th{color:var(--mu);font-weight:500}
+code{background:var(--card);padding:2px 6px;border-radius:6px;font-size:14px}pre{background:var(--card);padding:14px;border-radius:12px;overflow:auto;font-size:14px;line-height:1.5}pre code{padding:0;background:none}
+blockquote{border-left:3px solid var(--acc);margin:12px 0;padding:6px 16px;background:var(--card);border-radius:0 12px 12px 0}
+.hero{padding:30px 0 10px}.hero p.lead{font-size:20px;color:#d9dbe3;max-width:700px}
+.btns{display:flex;gap:12px;flex-wrap:wrap;margin:18px 0 6px}
+.btn{display:inline-block;background:var(--acc);color:#1a0d00;text-decoration:none;font-weight:600;padding:14px 18px;border-radius:12px;font-size:16px}
+.btn.sec{background:var(--card);color:var(--tx);border:1px solid var(--b)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px;margin:14px 0 8px}
+.card{display:block;background:var(--card);border:1px solid var(--b);border-radius:14px;padding:16px;text-decoration:none;color:var(--tx)}
+.card:hover{border-color:var(--acc)}.card .k{font-size:12px;color:var(--acc);letter-spacing:.04em;text-transform:uppercase}.card h3{margin:6px 0 6px;font-size:18px}.card p{margin:0;font-size:14px;color:var(--mu)}
+.card .t{font-size:12px;color:var(--mu);margin-top:8px}
+.mu{color:var(--mu);font-size:14px}.pager{display:flex;justify-content:space-between;gap:12px;margin-top:40px;font-size:15px}
+.step{background:var(--card);border:1px solid var(--b);border-radius:12px;padding:12px 16px;margin:10px 0}
+@media(max-width:600px){h1{font-size:28px}}</style></head>
+<body><nav class="top"><a class="brand" href="../index.html">El cerebro de tu empresa</a><a href="../t/01-la-semilla.html">Empieza aquí</a><a href="../t/04-conectar-higgsfield.html">Vídeo y anuncios</a><a class="on" href="../t/09-anatomia-de-una-nota.html">El sistema</a><a href="../t/14-datos-sensibles-y-ria.html">Seguridad y ley</a><a href="../t/15-publicar-pagina-qr.html">Publicar</a><a href="../t/16-la-guia-completa.html">Referencia</a><a href="../index.html#descargas">Descargas</a></nav><div class="wrap"><p class="mu">El sistema · 20 min</p><h1>El agente de tendencias mensual</h1><p class="lead">Un prompt que rellena el radar cada mes con estado y fuente. Se adapta a competencia, normativa o precios cambiando un párrafo.</p><h1>Agente de tendencias (mensual)</h1>
+<p>Eres el radar de tendencias de Suela Norte. Una vez al mes:</p>
+<ol>
+<li>Lee [[03_PARA_QUIEN]] y [[04_PRODUCTOS/_catalogo|el catalogo]] para saber que nos importa.</li>
+<li>Busca en la web (TikTok, Google Trends, medios de moda, reventa) que modelos y estilos suben o bajan en Espana en los ultimos 30 dias.</li>
+<li>Por cada tendencia relevante crea una nota en 06_TENDENCIAS con: nombre, estado (subiendo / estable / bajando / muerta), dato que lo sostiene con fuente, y que producto nuestro toca.</li>
+<li>Actualiza [[06_TENDENCIAS/_radar|_radar]] y propon en [[08_TAREAS/_tablero|el tablero]] una campana por cada tendencia "subiendo" que tenga stock.</li>
+<li>No inventes cifras: si no hay dato, escribe "sin dato".</li>
+</ol>
+<p>Se adapta cambiando el paso 2: competencia (que hacen las otras tiendas), normativa (que cambia en etiquetado o devoluciones), precios (que PVP tiene cada modelo en 5 webs).</p>
+<h2>Cómo se ejecuta</h2>
+<ul>
+<li>Con Claude Code o cualquier agente con búsqueda web, dentro de la carpeta del cerebro: pega el prompt y di "es 1 de mes".</li>
+<li>Cada tendencia sale como nota con <code>estado</code> en la cabecera (subiendo / estable / bajando / muerta) y el dato con fuente. Sin dato, "sin dato".</li>
+<li>Solo las "subiendo" con producto en stock pueden convertirse en campaña. Las que salen en la tele ya no son tendencia.</li>
+</ul>
+<h2>Variantes</h2>
+<p>Cambia el paso 2 y tienes otro agente: competencia (qué hacen las otras tiendas y a qué precio), normativa (qué cambia en etiquetado, devoluciones o IA), precios (PVP del mismo modelo en cinco webs).</p><div class="pager"><a href="10-bandeja-y-revision.html">← La bandeja de notas sueltas y la revisión mensual</a><a href="12-tu-primera-skill.html">Tu primera skill →</a></div>
+<hr><p class="mu">Semana de la IA 2026 · Cluster TIC Asturias · 25 de septiembre · Adrián Nicieza, edrian.exe · contacto@edrianexe.com · @edrian.exe<br>Contenido generado con ayuda de IA y revisado por un humano. Datos de la tienda de ejemplo, simulados.</p></div></body></html>
