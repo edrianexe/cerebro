@@ -1,0 +1,82 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Del cerebro al anuncio: el flujo completo · El cerebro de tu empresa · edrian.exe</title><meta name="description" content="La skill anuncio-ia: cómo pasar de una foto de producto y cuatro documentos a un anuncio que vende, con control de calidad y etiqueta."><style>:root{--bg:#0b0b0f;--tx:#f2f5fa;--mu:#8a8a94;--acc:#ff8c00;--card:#15151b;--b:#2a2a33}
+html{background:var(--bg)}body{margin:0;background:var(--bg);color:var(--tx);font:17px/1.65 -apple-system,"Segoe UI",Inter,Arial,sans-serif}
+a{color:var(--acc)}.wrap{max-width:860px;margin:0 auto;padding:24px 20px 80px}
+nav.top{display:flex;gap:14px;flex-wrap:wrap;align-items:center;padding:14px 20px;border-bottom:1px solid var(--b);position:sticky;top:0;background:rgba(11,11,15,.96);z-index:9}
+nav.top a{color:var(--tx);text-decoration:none;font-size:14px;padding:6px 10px;border-radius:8px}nav.top a:hover,nav.top a.on{background:var(--card);color:var(--acc)}
+nav.top .brand{font-weight:600;color:var(--acc)}
+h1{font-size:36px;line-height:1.12;margin:10px 0 8px}h2{font-size:24px;margin:40px 0 12px;color:var(--acc)}h3{font-size:19px;margin:26px 0 8px}
+p,li{color:#d9dbe3}strong{color:var(--tx)}hr{border:0;border-top:1px solid var(--b);margin:40px 0}
+table{border-collapse:collapse;width:100%;font-size:15px;margin:12px 0}th,td{border:1px solid var(--b);padding:8px 10px;text-align:left;vertical-align:top}th{color:var(--mu);font-weight:500}
+code{background:var(--card);padding:2px 6px;border-radius:6px;font-size:14px}pre{background:var(--card);padding:14px;border-radius:12px;overflow:auto;font-size:14px;line-height:1.5}pre code{padding:0;background:none}
+blockquote{border-left:3px solid var(--acc);margin:12px 0;padding:6px 16px;background:var(--card);border-radius:0 12px 12px 0}
+.hero{padding:30px 0 10px}.hero p.lead{font-size:20px;color:#d9dbe3;max-width:700px}
+.btns{display:flex;gap:12px;flex-wrap:wrap;margin:18px 0 6px}
+.btn{display:inline-block;background:var(--acc);color:#1a0d00;text-decoration:none;font-weight:600;padding:14px 18px;border-radius:12px;font-size:16px}
+.btn.sec{background:var(--card);color:var(--tx);border:1px solid var(--b)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px;margin:14px 0 8px}
+.card{display:block;background:var(--card);border:1px solid var(--b);border-radius:14px;padding:16px;text-decoration:none;color:var(--tx)}
+.card:hover{border-color:var(--acc)}.card .k{font-size:12px;color:var(--acc);letter-spacing:.04em;text-transform:uppercase}.card h3{margin:6px 0 6px;font-size:18px}.card p{margin:0;font-size:14px;color:var(--mu)}
+.card .t{font-size:12px;color:var(--mu);margin-top:8px}
+.mu{color:var(--mu);font-size:14px}.pager{display:flex;justify-content:space-between;gap:12px;margin-top:40px;font-size:15px}
+.step{background:var(--card);border:1px solid var(--b);border-radius:12px;padding:12px 16px;margin:10px 0}
+@media(max-width:600px){h1{font-size:28px}}</style></head>
+<body><nav class="top"><a class="brand" href="../index.html">El cerebro de tu empresa</a><a href="../t/01-la-semilla.html">Empieza aquí</a><a class="on" href="../t/04-conectar-higgsfield.html">Vídeo y anuncios</a><a href="../t/09-anatomia-de-una-nota.html">El sistema</a><a href="../t/14-datos-sensibles-y-ria.html">Seguridad y ley</a><a href="../t/15-publicar-pagina-qr.html">Publicar</a><a href="../t/16-la-guia-completa.html">Referencia</a><a href="../index.html#descargas">Descargas</a></nav><div class="wrap"><p class="mu">Vídeo y anuncios · 45 min</p><h1>Del cerebro al anuncio: el flujo completo</h1><p class="lead">La skill anuncio-ia: cómo pasar de una foto de producto y cuatro documentos a un anuncio que vende, con control de calidad y etiqueta.</p><h2>El flujo en una línea</h2>
+<p>Cerebro (quién, qué, para quién, reglas) → metaprompt → prompt para el generador → generación → control de calidad → etiqueta de IA → publicar.</p>
+<h2>Paso 0. Instala la skill</h2>
+<p>En el kit va <code>SKILL anuncio-ia</code>. En Claude Code se copia a <code>.claude/skills/anuncio-ia/SKILL.md</code> dentro de tu carpeta; en cualquier otro chat se pega como instrucciones del proyecto. A partir de ahí, "hazme un anuncio de este producto" sigue el proceso solo.</p>
+<h2>Paso 1. El metaprompt</h2>
+<p>No le pidas el anuncio al modelo. Pídele el prompt para el generador. Es la pieza que no caduca cuando cambia la herramienta.</p>
+<pre><code>Eres un ingeniero de prompts especializado en herramientas de generación de imagen y vídeo (Seedance, Kling, Nano Banana o las que existan cuando leas esto).
+Tu trabajo NO es crear el anuncio: es escribirme el prompt perfecto para que lo cree la herramienta que yo elija.
+1. Lee 01_QUIEN, 02_QUE, 03_PARA_QUIEN y 04_REGLAS.
+2. Pregúntame 4 cosas y espera: objetivo de la campaña, producto concreto (te adjuntaré su foto), formato y duración, dónde se publica.
+3. Escribe el prompt final: descripción visual plano a plano, estilo y luz coherentes con la marca, texto o voz en castellano con la voz de 01_QUIEN, y qué restricciones de 04_REGLAS no puede saltarse.
+4. Entrégalo en un bloque listo para copiar y, debajo, en 2 líneas, qué debo revisar del resultado antes de publicarlo.
+</code></pre>
+<h2>Paso 2. Lo que dice la skill</h2>
+<p>Basada en los patrones de los anuncios con IA con cifras públicas (ver <code>PATRONES - anuncios con IA que funcionaron</code> en el kit). Regla de oro: el modelo pone el acabado; el cerebro pone lo que vende.</p>
+<h2>Entradas</h2>
+<ol>
+<li>Foto del producto (obligatoria). Si hay varias, la que muestre el producto entero y de lado.</li>
+<li>Foto de la persona que lo presenta (opcional; si es real, hace falta su consentimiento explícito antes de generar).</li>
+<li>El cerebro del negocio si existe: <code>01_QUIEN</code> (voz), <code>02_QUE</code> (precio, plazos), <code>03_PARA_QUIEN</code> (a quién le hablas), <code>04_REGLAS</code> (líneas rojas). Si no existe, pide seis líneas sobre el negocio y trabaja con eso marcando <code>[PREGUNTAR AL DUEÑO]</code> en lo que falte.</li>
+<li>Formato y destino: vertical 9:16 para Instagram/TikTok, horizontal 16:9 para YouTube o pantalla. Duración 10 a 15 s para UGC, 15 a 30 s para cinematográfico.</li>
+</ol>
+<h2>Proceso</h2>
+<p><strong>Paso 1. Registro.</strong> Elige uno y dilo antes de generar:
+- UGC de móvil: calle o tienda real, luz de día, plano medio, habla como en la tienda. Es el que más vende para pymes y el que mejor perdona los errores del modelo.
+- Cinematográfico: noche, contraluz, avance lento de cámara, texto o voz breve. Para marca, cierres y avatares. Pedir siempre luz de relleno en la cara; el contraluz puro la pierde en proyector y en móvil.
+Nunca: emoción nostálgica con pretensión de realismo perfecto. Es donde la IA más se nota y donde los estudios miden rechazo.</p>
+<p><strong>Paso 2. Guion de 3 partes, con fricción.</strong> Máximo 35 palabras para 15 s.
+- Gancho (3 s): dolor o secreto, producto ya en la mano. Nada de "descubre" ni "increíble".
+- Cuerpo: una pega o una sorpresa real ("no me las quito", "pesa la mitad de lo que parece").
+- Cierre con condición real de la ficha: precio exacto, plazo, cambio o devolución, dónde comprar. Todo sale de <code>02_QUE</code>; si no está, <code>[PREGUNTAR AL DUEÑO]</code>, nunca inventado.
+Prohibido por <code>04_REGLAS</code> por defecto: "últimas unidades", "exclusivo", descuentos no confirmados, comparaciones con marcas.</p>
+<p><strong>Paso 3. Prompt para el generador.</strong> Estructura fija:</p>
+<pre><code>[Formato y duración] + [registro y localización concreta: ciudad, calle, luz] +
+[persona de la referencia: cara, pelo, ropa, &quot;exactamente&quot;] +
+[producto de la referencia: modelo y colores, &quot;exactamente ese&quot;] +
+[planos: medio → detalle en mano → medio] +
+[voz: idioma y acento, labios sincronizados, texto literal entre comillas] +
+[prohibiciones: sin texto en pantalla, sin subtítulos, sin logos añadidos, sin música, sin frases prohibidas]
+</code></pre>
+<p>Referencias: producto como <code>product</code>, persona como <code>character</code> (dos fotogramas si hay vídeo), localización real como <code>image</code> si se quiere la calle de verdad (fotos libres de Wikimedia sirven; guarda la licencia).</p>
+<p><strong>Paso 4. Generar.</strong> Modelo por defecto: Seedance 2.5 (voz nativa en castellano, referencias de producto y personaje, 5 a 7 minutos). Alternativa: Kling 3.0 en Higgsfield. Una generación por variante; iterar el prompt, no el modelo. Presupuesta tirar la mitad.</p>
+<p><strong>Paso 5. QC obligatorio antes de entregar.</strong>
+- Ver todos los frames a 1 fps: producto correcto (modelo, color, logo), manos, texto fantasma.
+- Transcribir el audio y comparar palabra por palabra con el guion. Si el modelo cambia una cifra, se repite.
+- Si hay voz clonada o avatar: remuxar siempre la pista de voz buena encima; el modelo no conserva el timbre del audio de referencia.
+- Nivel de audio: normalizar a −14 LUFS y escucharlo en un móvil antes de dar por bueno.</p>
+<p><strong>Paso 6. Etiqueta.</strong> Dos segundos finales o sobreimpresión: "Contenido generado con IA". Obligatorio en la UE desde el 2 de agosto de 2026. Anotar en la ficha de la campaña: modelo usado, fecha, prompt exacto, referencias y consentimientos.</p>
+<h2>Salida</h2>
+<ul>
+<li>El vídeo final con etiqueta.</li>
+<li>El prompt exacto usado (para repetirlo con otra herramienta cuando esta caduque).</li>
+<li>Dos líneas: qué revisar antes de publicar y qué variante probar si no rinde (otro gancho, otro registro).</li>
+</ul>
+<h2>Ejemplo real (charla Cluster TIC, sept 2026)</h2>
+<p>Mismo producto y misma persona, dos prompts. Sin cerebro: "una chica joven lo presenta y lo recomienda" → calle genérica, discurso de influencer. Con cerebro: calle de Uría en Oviedo, "las tenemos en la tienda y en la web, 130 euros, stock real, si no te quedan bien las cambias en 30 días y ya". La diferencia se ve sin explicarla.</p>
+<h2>Siguiente</h2>
+<p><a href="07-ugc-o-cinematografico.html">UGC o cinematográfico, y el restyle de un clon</a>.</p><div class="pager"><a href="05-conectar-freepik.html">← La alternativa: Seedance y Kling desde Claude</a><a href="07-ugc-o-cinematografico.html">UGC o cinematográfico, y cómo convertir un vídeo tuyo en un spot →</a></div>
+<hr><p class="mu">Semana de la IA 2026 · Cluster TIC Asturias · 25 de septiembre · Adrián Nicieza, edrian.exe · contacto@edrianexe.com · @edrian.exe<br>Contenido generado con ayuda de IA y revisado por un humano. Datos de la tienda de ejemplo, simulados.</p></div></body></html>
