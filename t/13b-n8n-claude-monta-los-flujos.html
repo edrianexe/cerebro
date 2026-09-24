@@ -30,7 +30,7 @@ figure.hd{margin:18px 0 26px}figure.hd img{max-height:440px;object-fit:cover}fig
 @media(max-width:700px){h1{font-size:28px}nav.top{flex-wrap:nowrap;overflow-x:auto;gap:6px;padding:10px 12px;scrollbar-width:none}nav.top a{white-space:nowrap;font-size:13px}.hero{grid-template-columns:1fr}.strip{grid-template-columns:repeat(2,1fr)}figure.hd img{max-height:300px}}</style></head>
 <body><nav class="top"><a class="brand" href="../index.html">El cerebro de tu empresa</a><a href="../t/01-la-semilla.html">Empieza aquí</a><a href="../t/04-conectar-higgsfield.html">Vídeo y anuncios</a><a class="on" href="../t/09-anatomia-de-una-nota.html">El sistema</a><a href="../t/14-datos-sensibles-y-ria.html">Seguridad y ley</a><a href="../t/15-publicar-pagina-qr.html">Publicar</a><a href="../t/16-la-guia-completa.html">Referencia</a><a href="../index.html#qr">QR</a><a href="../index.html#descargas">Descargas</a></nav><div class="wrap"><p class="mu">El sistema · 30 min</p><h1>n8n: Claude te monta los flujos</h1><p class="lead">n8n repite, Claude construye, un agente trabaja para ti. Cómo conectar Claude al MCP oficial de n8n y pedirle el flujo en lenguaje normal, sin armarlo nodo a nodo.</p><figure class="hd"><img src="../img/app_n8n.jpg" alt="n8n: flujos que se ven y se controlan, y que ahora Claude puede crear por ti (n8n.io)." loading="lazy"><figcaption>n8n: flujos que se ven y se controlan, y que ahora Claude puede crear por ti (n8n.io).</figcaption></figure><h2>Qué es n8n y por qué te importa</h2>
 <p>n8n es una línea de producción. Un disparador (llega un correo, un formulario, un mensaje de Telegram, las 8 de la mañana), unas conexiones (tu CRM, tu hoja de cálculo, WhatsApp, Instagram) y unos condicionales (si el pedido supera 200 euros, avisa a Marta). Ejecuta el mismo proceso cada vez, igual. Misma entrada, misma salida. Es determinista, y eso es justo lo que la IA no es.</p>
-<p>Por eso n8n y Claude no compiten. La pregunta "¿n8n o Claude?" es la pregunta equivocada. El encuadre que mejor lo resume es el de Erik Taveras (@eriktaveras, septiembre de 2026): <strong>n8n repite procesos, Claude Code construye, y un agente residente trabaja para ti</strong>. No se sustituyen, se conectan.</p>
+<p>Por eso n8n y Claude no compiten. La pregunta "¿n8n o Claude?" es la pregunta equivocada. La división que uso: <strong>n8n repite procesos, Claude Code construye, y un agente residente trabaja para ti</strong>. No se sustituyen, se conectan.</p>
 <table>
 <thead>
 <tr>
@@ -57,18 +57,16 @@ figure.hd{margin:18px 0 26px}figure.hd img{max-height:440px;object-fit:cover}fig
 </tr>
 </tbody>
 </table>
-<h2>El vídeo de Erik Taveras, en dos minutos</h2>
-<p>Es un reel de minuto y medio, en español, publicado el 23 de septiembre de 2026: <a href="https://www.instagram.com/p/DdpF111p5Iz/">n8n, Claude Code o Hermes? Esa es la pregunta equivocada</a>. Merece verse entero. Lo que dice, por partes:</p>
+<h2>Tres herramientas, tres trabajos</h2>
+<p>Los tres usan IA y los tres ejecutan tareas, y por eso se comparan como si fueran lo mismo ("voy a sustituir n8n por Claude"). Es un error: hacen trabajos distintos.</p>
 <ol>
-<li><strong>La pregunta equivocada.</strong> Los tres usan IA y los tres ejecutan tareas, y por eso la gente los compara como si fueran lo mismo ("voy a sustituir n8n por Claude"). Error: no compiten.</li>
-<li><strong>n8n es una línea de producción.</strong> Un disparador, conexiones, condicionales, y ejecuta el mismo proceso cada vez. Totalmente determinista. Y lo nuevo: ya no hace falta armar los flujos nodo por nodo, porque Claude los crea vía el MCP oficial de n8n. Desde Claude, desde Hermes o desde ChatGPT.</li>
-<li><strong>Claude Code es el constructor.</strong> Con la actualización de Projects se le da un objetivo y reparte el trabajo en varios agentes que trabajan en paralelo, cada uno en su rama (en pantalla: tres sesiones a la vez, en local o en remoto). "Uno de los mejores constructores, no hay duda."</li>
-<li><strong>Hermes trabaja para ti.</strong> Claude Code vive en la sesión y espera tu prompt; Hermes sigue trabajando cuando cierras y te escribe él. Corre en tu propio servidor, con el modelo que quieras, y hablas con él por WhatsApp, Telegram, Slack o Discord. Lo que lo separa: cuando resuelve algo complejo lo empaqueta en una skill, y esa skill mejora cuanto más la usas.</li>
-<li><strong>Se solapan, y mucho.</strong> Hermes también programa. Claude Code también se controla desde el teléfono. No pasa nada.</li>
-<li><strong>Lo interesante es conectarlos.</strong> Claude Code hace los flujos de n8n. Hermes orquesta los procesos de Claude Code (en pantalla se ve a Hermes delegando en Claude con un comando). Y todo eso desde el móvil. La tabla final del vídeo: n8n para lo que se repite, Claude Code para lo que se construye, Hermes para tu día a día.</li>
+<li><strong>n8n es una línea de producción.</strong> Un disparador, conexiones, condicionales, y ejecuta el mismo proceso cada vez. Totalmente determinista. Y lo nuevo: ya no hace falta armar los flujos nodo por nodo, porque Claude los crea vía el MCP oficial de n8n.</li>
+<li><strong>Claude Code es el constructor.</strong> Se le da un objetivo y reparte el trabajo en varios agentes que trabajan en paralelo, cada uno en su rama. Hace lo difícil: diseñar, escribir, probar, corregir.</li>
+<li><strong>Un agente residente trabaja para ti.</strong> Claude Code vive en la sesión y espera tu prompt; un agente residente (Hermes, OpenClaw y similares) sigue trabajando cuando cierras y te escribe él. Corre en tu propio servidor, con el modelo que quieras, y hablas con él por WhatsApp, Telegram, Slack o Discord. Lo que lo separa: cuando resuelve algo complejo lo empaqueta en una skill, y esa skill mejora cuanto más la usas.</li>
+<li><strong>Se solapan, y mucho.</strong> El agente residente también programa. Claude Code también se controla desde el teléfono. No pasa nada.</li>
+<li><strong>Lo interesante es conectarlos.</strong> Claude Code hace los flujos de n8n. El agente residente orquesta los procesos de Claude Code. Y todo eso desde el móvil. En una línea: n8n para lo que se repite, Claude Code para lo que se construye, el agente para tu día a día.</li>
 </ol>
-<p>Su cierre, que suscribimos: la idea no es elegir uno, sino saber para qué se usa cada cual, y no descartar ninguno "porque el influencer de turno te dijo que no servía para nada".</p>
-<p>Lo que añade este kit a ese encuadre: el cerebro. Sin él, Claude construye flujos genéricos; con él, construye el flujo que tu empresa necesita, y n8n lo repite con tus reglas dentro.</p>
+<p>La idea no es elegir uno, sino saber para qué se usa cada cual. Y lo que añade el cerebro: sin él, Claude construye flujos genéricos; con él, construye el flujo que tu empresa necesita, y n8n lo repite con tus reglas dentro.</p>
 <h2>Lo que ha cambiado este año</h2>
 <p>Hasta hace poco los flujos de n8n se armaban nodo a nodo, a mano, y ahí se atascaba todo el mundo. Ahora n8n publica un <strong>servidor MCP oficial</strong>: conectas Claude (o ChatGPT, Cursor, Codex, Gemini CLI) a tu instancia de n8n y le describes el flujo en lenguaje normal. Claude lo crea, lo edita, lo prueba y lo ejecuta desde el chat. Verificado en la documentación de n8n: crear y editar flujos desde el MCP existe desde la versión 2.13.</p>
 <p>Con el cerebro de tu empresa delante, además, Claude sabe qué flujo necesitas: lee la nota de tareas, ve que la revisión de campañas se hace cada lunes a mano, y te propone el flujo que la automatiza.</p>
@@ -101,7 +99,7 @@ figure.hd{margin:18px 0 26px}figure.hd img{max-height:440px;object-fit:cover}fig
 <ul>
 <li><strong>Claude construye el flujo</strong> y lo cambia cuando cambia el negocio.</li>
 <li><strong>n8n lo ejecuta</strong> mil veces igual, con registro de cada ejecución.</li>
-<li><strong>Un agente residente</strong> (si lo tienes) orquesta a Claude y a n8n desde tu teléfono: le escribes "lanza la revisión de campañas" y él llama a uno u otro. En el vídeo de Erik Taveras es Hermes delegando en Claude Code; el patrón vale con cualquier agente que admita comandos.</li>
+<li><strong>Un agente residente</strong> (si lo tienes) orquesta a Claude y a n8n desde tu teléfono: le escribes "lanza la revisión de campañas" y él llama a uno u otro. El patrón vale con cualquier agente que admita comandos.</li>
 </ul>
 <h2>Dos reglas que no negociamos</h2>
 <ul>
